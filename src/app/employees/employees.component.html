@@ -1,13 +1,63 @@
-<h2> Details</h2>
-<div *ngFor="let employee of employees">
-  <div>
-  id:
-  {{employee.id}}
-</div> 
-<div>
-  name:{{employee.name| uppercase}}
-</div>
-</div>
+
+<mat-card class="Description" >
+<h2> Details Employees </h2>
+<ul class="employees">
+<li *ngFor="let employee of employees">
+  <span class="badge">
+    id: {{employee.id}}
+  </span>
+  {{employee.name| uppercase}}
+ 
+</li>
+</ul>
+</mat-card>
+
+<mat-card class="Employees" *ngIf="show">
+    <mat-card-content>
+       <form class="new-employee">
+          <mat-form-field class="full-width">
+             <mat-label>Id</mat-label>
+             <input  matInput  placeholder="Id" name="id">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+             <mat-label>Name</mat-label>
+             <input  matInput  placeholder="Name" name="name">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+              <mat-label>Company</mat-label>
+              <input  matInput  placeholder="Company" name="company">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Age</mat-label>
+              <input  matInput  placeholder="Age" name="age">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Birthday</mat-label>
+              <input  matInput  placeholder="Birthday" name="birthday">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Favorite color</mat-label>
+              <input  matInput  placeholder="favorite_color" name="favorite_color">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Project </mat-label>
+              <input  matInput  placeholder="project" name="project">
+           </mat-form-field>
+       </form>
+    </mat-card-content>
+    <mat-card-actions>
+       <button mat-raised-button (click)="add()" color="primary">Submit employee</button>
+    </mat-card-actions>
+ </mat-card>
+<mat-card>
+ <mat-card-actions *ngIf="!show">
+    <button mat-raised-button (click)="register()" color="primary">Add employee</button>
+ </mat-card-actions>
+</mat-card>
+
+
+
+
 
 <!--
 <div><span>id: </span>{{employee.id}}</div>

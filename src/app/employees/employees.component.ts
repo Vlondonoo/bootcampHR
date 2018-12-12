@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit{
+  show: boolean = false;
   employees: Employee[];
 
   constructor(private http: HttpClient, public data:DataService) { 
@@ -28,6 +29,9 @@ export class EmployeesComponent implements OnInit{
       console.log(data)
     });
   }
+  register(){
+    this.show = true
+  }
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
@@ -35,6 +39,7 @@ export class EmployeesComponent implements OnInit{
       .subscribe(employee => {
         this.employees.push(employee);
       });
+      this.show = false
   }
 
 
