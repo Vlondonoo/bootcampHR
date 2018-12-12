@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DataService } from '../data.service';
+import { Employee } from '../shared/employee';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-employees',
@@ -6,12 +11,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit{
-  
-  
+  employees: Employee[];
 
-  constructor() { }
-
+  constructor(private http: HttpClient, public data:DataService) { 
+    
+    
+  }
+  
   ngOnInit() {
+    this.getEmployees();
+  }
+  getEmployees(): void {
+    this.data.getEmployees()
+    .subscribe(data => {
+      this.employees = data;
+      console.log(data)
+    });
+  }
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.data.addEmployee({ name } as Employee)
+      .subscribe(employee => {
+        this.employees.push(employee);
+      });
   }
 
+
+  delete(employee: Employee): void {
+    this.employees = this.employees.filter(h => h !== employee);
+    this.data.deleteEmployee(employee).subscribe();
+  }
+  
+  
 }
+

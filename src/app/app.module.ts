@@ -9,6 +9,10 @@ import { EmployeesComponent } from './employees/employees.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { MyMaterialModule } from './my-material/my-material.module';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { EmployeesdataService } from './shared/employeesdata.service';
 
 
 
@@ -22,9 +26,12 @@ import { MyMaterialModule } from './my-material/my-material.module';
   ],
   imports: [
     BrowserModule,
+    MyMaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MyMaterialModule,
+    HttpModule,    
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(EmployeesdataService)
   ],
   providers: [],
   bootstrap: [AppComponent]

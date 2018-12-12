@@ -15,8 +15,8 @@ export class EmployeesdataService implements InMemoryDbService {
       project: 'the best'
     },
     {
-      id: 5,
-      name: '',
+      id: 6,
+      name: 'monica',
       company: '',
       age: 10,
       birthday: '08/08/2018',
@@ -30,7 +30,7 @@ export class EmployeesdataService implements InMemoryDbService {
       team_size: 5,
       client_name: 'Came'
     }]
-    return { employees };
+    return {employees};
   }
   constructor() { }
 }

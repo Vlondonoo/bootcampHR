@@ -1,11 +1,19 @@
-<p>
-  employees works!
-  
-</p>
-<h2>{{employee.name | uppercase}} Details</h2>
+<h2> Details</h2>
+<div *ngFor="let employee of employees">
+  <div>
+  id:
+  {{employee.id}}
+</div> 
+<div>
+  name:{{employee.name| uppercase}}
+</div>
+</div>
+
+<!--
 <div><span>id: </span>{{employee.id}}</div>
 <div>
   <label>name:
-    <pre>{{employee | json }}</pre>
+      <pre>{{employee | json }}</pre> 
   </label>
 </div>
+-->
