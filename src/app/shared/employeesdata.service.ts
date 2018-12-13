@@ -29,8 +29,12 @@ export class EmployeesdataService implements InMemoryDbService {
       name: 'the best',
       team_size: 5,
       client_name: 'Came'
+    }];
+    let userLogin = [{
+      userName: 'vlondonoo',
+      password: '1992'
     }]
-    return {employees};
+    return {employees, project, userLogin};
   }
   constructor() { }
 }

@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { EmployeesdataService } from './shared/employeesdata.service';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -22,7 +23,8 @@ import { EmployeesdataService } from './shared/employeesdata.service';
     LoginComponent,
     EmployeesComponent,
     ProjectsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
