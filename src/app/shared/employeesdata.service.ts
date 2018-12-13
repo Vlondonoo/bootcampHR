@@ -21,7 +21,16 @@ export class EmployeesdataService implements InMemoryDbService {
       age: 10,
       birthday: '08/08/2018',
       favorite_color: '',
-      project: ''
+      project: 'p1'
+    },
+    {
+      id: 7,
+      name: 'gertrudis',
+      company: '',
+      age: 35,
+      birthday: '08/08/2018',
+      favorite_color: 'purple',
+      project: 'p2'
     }
     ];
     let project = [{
@@ -29,8 +38,27 @@ export class EmployeesdataService implements InMemoryDbService {
       name: 'the best',
       team_size: 5,
       client_name: 'Came'
+    },
+    {
+      id: 6,
+      name: 'p1',
+      team_size: 8,
+      client_name: 'Came'
+    },
+    {
+      id: 7,
+      name: 'p2',
+      team_size: 3,
+      client_name: 'Came'
+    }
+  ];
+
+  
+    let userLogin = [{
+      userName: 'vlondonoo',
+      password: '1234'
     }]
-    return {employees};
+    return {employees, project, userLogin};
   }
   constructor() { }
 }

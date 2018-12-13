@@ -1,9 +1,9 @@
 
 <mat-card class="Description" >
 <h2> Details Employees </h2>
-<ul class="employees">
+<ul class="employees" *ngIf="!show">
 <li *ngFor="let employee of employees">
-  <span class="badge">
+  <span class="sqid">
     id: {{employee.id}}
   </span>
   {{employee.name| uppercase}}
@@ -59,11 +59,3 @@
 
 
 
-<!--
-<div><span>id: </span>{{employee.id}}</div>
-<div>
-  <label>name:
-      <pre>{{employee | json }}</pre> 
-  </label>
-</div>
--->

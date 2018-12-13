@@ -6,15 +6,15 @@
       <form class="my-form">
          <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
-            <input  matInput  placeholder="Email" name="email">
+            <input  matInput  placeholder="Email" name="email" #email>
          </mat-form-field>
          <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input  matInput  placeholder="Password" name="password">
+            <input  matInput  placeholder="Password" name="password" #password>
          </mat-form-field>
       </form>
    </mat-card-content>
    <mat-card-actions>
-      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
+      <button mat-raised-button (click)="login(email.value, password.value)" color="primary">LOGIN</button>
    </mat-card-actions>
 </mat-card>

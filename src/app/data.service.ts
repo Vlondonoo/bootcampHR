@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Project } from './shared/project';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,7 +17,9 @@ const httpOptions = {
 })
 export class DataService {
   url = '/app/employees'
+  urlproject = '/app/project'
   employees: Employee[];
+  projects: Project[];
   
   constructor(private http: HttpClient) { }
   ngOnInit() {
@@ -57,6 +60,9 @@ export class DataService {
         return of(error)
       })
     );
+  }
+  getProjects():Observable<Project[]>{
+    return this.http.get<Project[]>(this.urlproject)
   }
   
 
